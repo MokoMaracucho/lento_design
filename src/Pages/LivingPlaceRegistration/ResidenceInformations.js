@@ -14,6 +14,8 @@ import LivingPlaceRegistrationTimelineState from '../../Context/LivingPlaceRegis
 
 import residenceFacilities from '../../Json/ResidenceFacilities'
 
+import '../../Styles/Pages/LivingPlaceRegistration.scss'
+
 const validationSchema = Yup.object({
     residence: Yup.object({
         house_number: Yup.number().integer().required('test'),
@@ -52,14 +54,14 @@ const ResidenceInformations = () => {
     }
 
     return (
-        <>
+        <div className='container_form'>
         <LivingPlaceRegistrationTimeline />
 
         <h5>Residence informations</h5>
 
-            <form onSubmit={formik.handleSubmit} className='form_living_place_register'>
+            <form onSubmit={formik.handleSubmit} className='form_living_place_register two_rows'>
 
-                <div id='complexInfos__div'>
+                <div id='complexInfos__div' className='formgroup-fullwidth'>
                     <p className='p-large blue_COLOR' style={{marginTop: '10px'}}>{data.complex.complex_name}</p>
                     <p className='p-medium' style={{marginTop: '-10px'}}>
                         {/* Van Koetsveldstraat 25, 3532 ES Utrecht (NL) */}
@@ -76,161 +78,173 @@ const ResidenceInformations = () => {
                     </p>
                 </div>
 
-                {/* HOUSE NUMBER */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number</FormLabel>
-                <TextField
-                    name='residence.house_number'
-                    value={formik.values.residence.house_number}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'residence.house_number') && Boolean(getIn(formik.errors, 'residence.house_number'))}
-                    helperText={getIn(formik.touched, 'residence.house_number') && getIn(formik.errors, 'residence.house_number')}
-                />
-
-                {/* HOUSE NUMBER EXTENSION */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number extension</FormLabel>
-                <TextField
-                    name='residence.house_number_extension'
-                    value={formik.values.residence.house_number_extension}
-                    onChange={formik.handleChange}
-                />
-
-                {/* FLOOR */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Floor</FormLabel>
-                <TextField
-                    name='residence.floor'
-                    value={formik.values.residence.floor}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'residence.floor') && Boolean(getIn(formik.errors, 'residence.floor'))}
-                    helperText={getIn(formik.touched, 'residence.floor') && getIn(formik.errors, 'residence.floor')}
-                />
-
-                {/* RENTAL PERMIT */}
-                <FormControl component='fieldset'>
-                    <FormLabel component='legend' style={{ color: 'black'}}>Rental permit?</FormLabel>
-                    <RadioGroup
-                        name='residence.rental_permit'
-                        value={formik.values.residence.rental_permit}
+                <FormControl >
+                    {/* HOUSE NUMBER */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number</FormLabel>
+                    <TextField
+                        size='small'
+                        name='residence.house_number'
+                        value={formik.values.residence.house_number}
                         onChange={formik.handleChange}
-                        error={getIn(formik.touched, 'residence.rental_permit') && Boolean(getIn(formik.errors, 'residence.rental_permit'))}
-                    >
-                        <FormControlLabel
-                            value='true'
-                            control={<Radio />}
-                            label='Yes'
-                        />
-                        <FormControlLabel
-                            value='false'
-                            control={<Radio />}
-                            label='No'
-                        />
-                    </RadioGroup>
-                    {getIn(formik.touched, 'residence.rental_permit') && (
-                        <div>
-                            {getIn(formik.errors, 'residence.rental_permit')}
-                        </div>
-                    )}
+                        error={getIn(formik.touched, 'residence.house_number') && Boolean(getIn(formik.errors, 'residence.house_number'))}
+                        helperText={getIn(formik.touched, 'residence.house_number') && getIn(formik.errors, 'residence.house_number')}
+                    />
                 </FormControl>
 
-                {/* ALWAYS VISIBLE */}
-                <FormControl component='fieldset'>
-                    <FormLabel component='legend' style={{ color: 'black'}}>Always visible?</FormLabel>
-                    <RadioGroup
-                        name='residence.visible_on_platform'
-                        value={formik.values.residence.visible_on_platform}
+                     <FormGroup className='formgroup-1fr-1fr'>
+                    {/* RENTAL PERMIT */}
+                    <FormControl component='fieldset'>
+                        <FormLabel component='legend' style={{ color: 'black'}}>Rental permit?</FormLabel>
+                        <RadioGroup
+                            row
+                            name='residence.rental_permit'
+                            value={formik.values.residence.rental_permit}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'residence.rental_permit') && Boolean(getIn(formik.errors, 'residence.rental_permit'))}
+                        >
+                            <FormControlLabel
+                                value='true'
+                                control={<Radio />}
+                                label='Yes'
+                            />
+                            <FormControlLabel
+                                value='false'
+                                control={<Radio />}
+                                label='No'
+                            />
+                        </RadioGroup>
+                        {getIn(formik.touched, 'residence.rental_permit') && (
+                            <div>
+                                {getIn(formik.errors, 'residence.rental_permit')}
+                            </div>
+                        )}
+                    </FormControl>
+
+                    {/* ALWAYS VISIBLE */}
+                    <FormControl component='fieldset'>
+                        <FormLabel component='legend' style={{ color: 'black'}}>Always visible?</FormLabel>
+                        <RadioGroup
+                            row
+                            name='residence.visible_on_platform'
+                            value={formik.values.residence.visible_on_platform}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'residence.visible_on_platform') && Boolean(getIn(formik.errors, 'residence.visible_on_platform'))}
+                        >
+                            <FormControlLabel
+                                value='true'
+                                control={<Radio />}
+                                label='Yes'
+                            />
+                            <FormControlLabel
+                                value='false'
+                                control={<Radio />}
+                                label='No'
+                            />
+                        </RadioGroup>
+                        {getIn(formik.touched, 'residence.visible_on_platform') && (
+                            <div>
+                                {getIn(formik.errors, 'residence.visible_on_platform')}
+                            </div>
+                        )}
+                    </FormControl>
+                 </FormGroup>
+
+                 <FormControl >
+                    {/* HOUSE NUMBER EXTENSION */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number extension</FormLabel>
+                    <TextField
+                        size='small'
+                        name='residence.house_number_extension'
+                        value={formik.values.residence.house_number_extension}
                         onChange={formik.handleChange}
-                        error={getIn(formik.touched, 'residence.visible_on_platform') && Boolean(getIn(formik.errors, 'residence.visible_on_platform'))}
-                    >
-                        <FormControlLabel
-                            value='true'
-                            control={<Radio />}
-                            label='Yes'
-                        />
-                        <FormControlLabel
-                            value='false'
-                            control={<Radio />}
-                            label='No'
-                        />
-                    </RadioGroup>
-                    {getIn(formik.touched, 'residence.visible_on_platform') && (
-                        <div>
-                            {getIn(formik.errors, 'residence.visible_on_platform')}
-                        </div>
-                    )}
-                </FormControl>
+                    />
+                 </FormControl>
 
-                {/* SNF CERTIFICATE */}
-                <FormControl component='fieldset'>
-                    <FormLabel component='legend' style={{ color: 'black'}}>SNF certificate</FormLabel>
-                    <RadioGroup
-                        name='residence.snf_certificate_approved'
-                        value={formik.values.residence.snf_certificate_approved}
+
+                 <FormGroup className='formgroup-1fr-1fr'>
+                    {/* SNF CERTIFICATE */}
+                    <FormControl component='fieldset'>
+                        <FormLabel component='legend' style={{ color: 'black'}}>SNF certificate</FormLabel>
+                        <RadioGroup
+                            row
+                            name='residence.snf_certificate_approved'
+                            value={formik.values.residence.snf_certificate_approved}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'residence.snf_certificate_approved') && Boolean(getIn(formik.errors, 'residence.snf_certificate_approved'))}
+                        >
+                            <FormControlLabel
+                                value='true'
+                                control={<Radio />}
+                                label='Yes'
+                            />
+                            <FormControlLabel
+                                value='false'
+                                control={<Radio />}
+                                label='No'
+                            />
+                        </RadioGroup>
+                        {getIn(formik.touched, 'residence.snf_certificate_approved') && (
+                            <div>
+                                {getIn(formik.errors, 'residence.snf_certificate_approved')}
+                            </div>
+                        )}
+                    </FormControl>
+
+                    {/* AKF CERTIFICATE */}
+                    <FormControl component='fieldset'>
+                        <FormLabel component='legend' style={{ color: 'black'}}>AKF certificate</FormLabel>
+                        <RadioGroup
+                            row
+                            name='residence.akf_certificate_approved'
+                            value={formik.values.residence.akf_certificate_approved}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'residence.akf_certificate_approved') && Boolean(getIn(formik.errors, 'residence.akf_certificate_approved'))}
+                        >
+                            <FormControlLabel
+                                value='true'
+                                control={<Radio />}
+                                label='Yes'
+                            />
+                            <FormControlLabel
+                                value='false'
+                                control={<Radio />}
+                                label='No'
+                            />
+                        </RadioGroup>
+                        {getIn(formik.touched, 'residence.akf_certificate_approved') && (
+                            <div>
+                                {getIn(formik.errors, 'residence.akf_certificate_approved')}
+                            </div>
+                        )}
+                    </FormControl>
+
+                 </FormGroup>
+
+                 <FormControl >
+                    {/* FLOOR */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Floor</FormLabel>
+                    <TextField
+                        size='small'
+                        name='residence.floor'
+                        value={formik.values.residence.floor}
                         onChange={formik.handleChange}
-                        error={getIn(formik.touched, 'residence.snf_certificate_approved') && Boolean(getIn(formik.errors, 'residence.snf_certificate_approved'))}
-                    >
-                        <FormControlLabel
-                            value='true'
-                            control={<Radio />}
-                            label='Yes'
-                        />
-                        <FormControlLabel
-                            value='false'
-                            control={<Radio />}
-                            label='No'
-                        />
-                    </RadioGroup>
-                    {getIn(formik.touched, 'residence.snf_certificate_approved') && (
-                        <div>
-                            {getIn(formik.errors, 'residence.snf_certificate_approved')}
-                        </div>
-                    )}
-                </FormControl>
-
-                {/* AKF CERTIFICATE */}
-                <FormControl component='fieldset'>
-                    <FormLabel component='legend' style={{ color: 'black'}}>SNF certificate</FormLabel>
-                    <RadioGroup
-                        name='residence.akf_certificate_approved'
-                        value={formik.values.residence.akf_certificate_approved}
+                        error={getIn(formik.touched, 'residence.floor') && Boolean(getIn(formik.errors, 'residence.floor'))}
+                        helperText={getIn(formik.touched, 'residence.floor') && getIn(formik.errors, 'residence.floor')}
+                    />
+                 </FormControl>
+    
+                <FormControl >
+                    {/* NUMBER OF ROOMS */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Number of rooms</FormLabel>
+                    <TextField
+                        size='small'
+                        name='residence.number_rooms'
+                        value={formik.values.residence.number_rooms}
                         onChange={formik.handleChange}
-                        error={getIn(formik.touched, 'residence.akf_certificate_approved') && Boolean(getIn(formik.errors, 'residence.akf_certificate_approved'))}
-                    >
-                        <FormControlLabel
-                            value='true'
-                            control={<Radio />}
-                            label='Yes'
-                        />
-                        <FormControlLabel
-                            value='false'
-                            control={<Radio />}
-                            label='No'
-                        />
-                    </RadioGroup>
-                    {getIn(formik.touched, 'residence.akf_certificate_approved') && (
-                        <div>
-                            {getIn(formik.errors, 'residence.akf_certificate_approved')}
-                        </div>
-                    )}
+                        error={getIn(formik.touched, 'residence.number_rooms') && Boolean(getIn(formik.errors, 'residence.number_rooms'))}
+                        helperText={getIn(formik.touched, 'residence.number_rooms') && getIn(formik.errors, 'residence.number_rooms')}
+                    />
                 </FormControl>
-
-                {/* NUMBER OF ROOMS */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Number of rooms</FormLabel>
-                <TextField
-                    name='residence.number_rooms'
-                    value={formik.values.residence.number_rooms}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'residence.number_rooms') && Boolean(getIn(formik.errors, 'residence.number_rooms'))}
-                    helperText={getIn(formik.touched, 'residence.number_rooms') && getIn(formik.errors, 'residence.number_rooms')}
-                />
-
-                {/* NUMBER OF ROOMS WITH LIVING PLACES */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>... with living place</FormLabel>
-                <TextField
-                    name='residence.number_rooms_with_vhes'
-                    value={formik.values.residence.number_rooms_with_vhes}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'residence.number_rooms_with_vhes') && Boolean(getIn(formik.errors, 'residence.number_rooms_with_vhes'))}
-                    helperText={getIn(formik.touched, 'residence.number_rooms_with_vhes') && getIn(formik.errors, 'residence.number_rooms_with_vhes')}
-                />
 
                 <FormGroup>
                     <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Facility types</FormLabel>
@@ -250,17 +264,35 @@ const ResidenceInformations = () => {
                     </FormGroup>
                 </FormGroup>
 
-                {/* PREVIEW */}
-                <Button variant='contained' type='submit' onClick={previewStep}>
-                    Previous
-                </Button>
-                
-                {/* NEXT */}
-                <Button color='primary' variant='contained' type='submit'>
-                    Next
-                </Button>
+                <FormControl >
+                    {/* NUMBER OF ROOMS WITH LIVING PLACES */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>... with living place</FormLabel>
+                    <TextField
+                        size='small'
+                        name='residence.number_rooms_with_vhes'
+                        value={formik.values.residence.number_rooms_with_vhes}
+                        onChange={formik.handleChange}
+                        error={getIn(formik.touched, 'residence.number_rooms_with_vhes') && Boolean(getIn(formik.errors, 'residence.number_rooms_with_vhes'))}
+                        helperText={getIn(formik.touched, 'residence.number_rooms_with_vhes') && getIn(formik.errors, 'residence.number_rooms_with_vhes')}
+                    />
+                </FormControl>
+
+              
+
+
+                <div className='button_wrapper'>
+                    {/* PREVIEW */}
+                    <Button variant='contained' type='submit' onClick={previewStep}>
+                        Previous
+                    </Button>
+
+                    {/* NEXT */}
+                    <Button color='primary' variant='contained' type='submit'>
+                        Next
+                    </Button>
+                </div>
             </form>
-        </>
+        </div>
     )
 }
 

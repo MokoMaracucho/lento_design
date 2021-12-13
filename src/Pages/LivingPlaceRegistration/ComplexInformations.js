@@ -16,6 +16,8 @@ import countries from '../../Json/Countries'
 import phoneNumberLandcode from '../../Json/PhoneNumberLandcode'
 import complexFacilities from '../../Json/ComplexFacilities'
 
+import '../../Styles/Pages/LivingPlaceRegistration.scss'
+
 const validationSchema = Yup.object({
     complex: Yup.object({
         complex_name: Yup.string().required('test'),
@@ -55,95 +57,101 @@ const ComplexInformations = () => {
     }
 
     return (
-        <>
+        <div className='container_form'>
             <LivingPlaceRegistrationTimeline />
 
             <h5>Complex informations</h5>
 
-            <form onSubmit={formik.handleSubmit} className='form_living_place_register'>
+            <form onSubmit={formik.handleSubmit} className='form_living_place_register two_rows'>
 
-                {/* COMPLEX NAME */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Complex name</FormLabel>
-                <TextField
-                    name='complex.complex_name'
-                    value={formik.values.complex.complex_name}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.complex_name') && Boolean(getIn(formik.errors, 'complex.complex_name'))}
-                    helperText={getIn(formik.touched, 'complex.complex_name') && getIn(formik.errors, 'complex.complex_name')}
-                />
-
-                {/* HOUSE NUMBER */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number</FormLabel>
-                <TextField
-                    name='complex.house_number'
-                    value={formik.values.complex.house_number}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.house_number') && Boolean(getIn(formik.errors, 'complex.house_number'))}
-                    helperText={getIn(formik.touched, 'complex.house_number') && getIn(formik.errors, 'complex.house_number')}
-                />
-
-                {/* CITY */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>City</FormLabel>
-                <TextField
-                    name='complex.city'
-                    value={formik.values.complex.city}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.city') && Boolean(getIn(formik.errors, 'complex.city'))}
-                    helperText={getIn(formik.touched, 'complex.city') && getIn(formik.errors, 'complex.city')}
-                />
-
-                {/* POSTAL CODE */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Postal code</FormLabel>
-                <TextField
-                    name='complex.postal_code'
-                    value={formik.values.complex.postal_code}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.postal_code') && Boolean(getIn(formik.errors, 'complex.postal_code'))}
-                    helperText={getIn(formik.touched, 'complex.postal_code') && getIn(formik.errors, 'complex.postal_code')}
-                />
-
-                {/* PHONE NUMBER */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Phone number</FormLabel>
-                <TextField
-                    name='complex.phone_number'
-                    value={formik.values.complex.phone_number}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.phone_number') && Boolean(getIn(formik.errors, 'complex.phone_number'))}
-                    helperText={getIn(formik.touched, 'complex.phone_number') && getIn(formik.errors, 'complex.phone_number')}
-                />
-
-                {/* EMAIL */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Email address</FormLabel>
-                <TextField
-                    name='complex.email_address'
-                    value={formik.values.complex.email_address}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.email_address') && Boolean(getIn(formik.errors, 'complex.email_address'))}
-                    helperText={getIn(formik.touched, 'complex.email_address') && getIn(formik.errors, 'complex.email_address')}
-                />
-
-                {/* STREET */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Street</FormLabel>
-                <TextField
-                    name='complex.street'
-                    value={formik.values.complex.street}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.street') && Boolean(getIn(formik.errors, 'complex.street'))}
-                    helperText={getIn(formik.touched, 'complex.street') && getIn(formik.errors, 'complex.street')}
-                />
-
-                {/* HOUSE NUMBER EXTENSION */}
-                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number extension</FormLabel>
-                <TextField
-                    name='complex.house_number_extension'
-                    value={formik.values.house_number_extension}
-                    onChange={formik.handleChange}
-                    error={getIn(formik.touched, 'complex.house_number_extension') && Boolean(getIn(formik.errors, 'complex.house_number_extension'))}
-                    helperText={getIn(formik.touched, 'complex.house_number_extension') && getIn(formik.errors, 'complex.house_number_extension')}
-                />
-
-                {/* COUNTRY */}
+                <FormControl >
+                    {/* COMPLEX NAME */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Complex name</FormLabel>
+                    <TextField
+                        size='small'
+                        name='complex.complex_name'
+                        value={formik.values.complex.complex_name}
+                        onChange={formik.handleChange}
+                        error={getIn(formik.touched, 'complex.complex_name') && Boolean(getIn(formik.errors, 'complex.complex_name'))}
+                        helperText={getIn(formik.touched, 'complex.complex_name') && getIn(formik.errors, 'complex.complex_name')}
+                    />
+                </FormControl>
+              
                 <FormControl>
+                    {/* STREET */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Street</FormLabel>
+                    <TextField
+                        size='small'
+                        name='complex.street'
+                        value={formik.values.complex.street}
+                        onChange={formik.handleChange}
+                        error={getIn(formik.touched, 'complex.street') && Boolean(getIn(formik.errors, 'complex.street'))}
+                        helperText={getIn(formik.touched, 'complex.street') && getIn(formik.errors, 'complex.street')}
+                    />
+                </FormControl>
+
+                <FormGroup className="formgroup-1fr-1fr">       
+                    <FormControl >        
+                        {/* HOUSE NUMBER */}
+                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>House number</FormLabel>
+                        <TextField
+                            size='small'
+                            name='complex.house_number'
+                            value={formik.values.complex.house_number}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'complex.house_number') && Boolean(getIn(formik.errors, 'complex.house_number'))}
+                            helperText={getIn(formik.touched, 'complex.house_number') && getIn(formik.errors, 'complex.house_number')}
+                        />
+                    </FormControl>
+
+                    <FormControl >
+                        {/* HOUSE NUMBER EXTENSION */}
+                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Extension</FormLabel>
+                        <TextField
+                            size='small'
+                            name='complex.house_number_extension'
+                            value={formik.values.house_number_extension}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'complex.house_number_extension') && Boolean(getIn(formik.errors, 'complex.house_number_extension'))}
+                            helperText={getIn(formik.touched, 'complex.house_number_extension') && getIn(formik.errors, 'complex.house_number_extension')}
+                        />
+                    </FormControl>   
+                </FormGroup>
+ 
+                <FormGroup className="formgroup-2fr-1fr">
+                    <FormControl>
+                        {/* CITY */}
+                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>City</FormLabel>
+                        <TextField
+                            size='small'
+                            name='complex.city'
+                            value={formik.values.complex.city}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'complex.city') && Boolean(getIn(formik.errors, 'complex.city'))}
+                            helperText={getIn(formik.touched, 'complex.city') && getIn(formik.errors, 'complex.city')}
+                        />
+
+                    </FormControl>
+
+                    <FormControl>
+                        {/* POSTAL CODE */}
+                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Postal code</FormLabel>
+                        <TextField
+                            size='small'
+                            name='complex.postal_code'
+                            value={formik.values.complex.postal_code}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'complex.postal_code') && Boolean(getIn(formik.errors, 'complex.postal_code'))}
+                            helperText={getIn(formik.touched, 'complex.postal_code') && getIn(formik.errors, 'complex.postal_code')}
+                        />
+                    </FormControl>
+                </FormGroup>
+                
+
+               
+
+                 {/* COUNTRY */}
+                <FormControl size='small'>
                     <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Country</FormLabel>
                     <Select
                         name='complex.country'
@@ -163,30 +171,72 @@ const ComplexInformations = () => {
                     )}
                 </FormControl>
 
-                {/* PHONE NUMBER LANDCODE */}
-                <FormControl>
-                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Phone number landcode</FormLabel>
-                    <Select
-                        name='complex.phone_number_landcode'
-                        value={formik.values.complex.phone_number_landcode}
+                <FormGroup className="formgroup-1fr-4fr">
+                    {/* PHONE NUMBER LANDCODE */}
+                    <FormControl size='small'>
+                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Landcode</FormLabel>
+                        <Select
+                            name='complex.phone_number_landcode'
+                            value={formik.values.complex.phone_number_landcode}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'complex.phone_number_landcode') && Boolean(getIn(formik.errors, 'complex.phone_number_landcode'))}
+                        >
+                            <MenuItem value=''>Choose a phone number landcode</MenuItem>
+                            {phoneNumberLandcode.map((item, index) => (
+                                <MenuItem key={index} value={item.value}>{item.label}</MenuItem>
+                            ))}
+                        </Select>
+                        {getIn(formik.touched, 'complex.phone_number_landcode') && (
+                            <div>
+                                {getIn(formik.errors, 'complex.phone_number_landcode')}
+                            </div>
+                        )}
+                    </FormControl>
+                    {/* PHONE NUMBER */}
+                    <FormControl >
+                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Phone number</FormLabel>
+                        <TextField
+                            size='small'
+                            name='complex.phone_number'
+                            value={formik.values.complex.phone_number}
+                            onChange={formik.handleChange}
+                            error={getIn(formik.touched, 'complex.phone_number') && Boolean(getIn(formik.errors, 'complex.phone_number'))}
+                            helperText={getIn(formik.touched, 'complex.phone_number') && getIn(formik.errors, 'complex.phone_number')}
+                        />
+                    </FormControl>
+                </FormGroup>
+
+                <FormControl >     
+                    {/* EMAIL */}
+                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Email address</FormLabel>
+                    <TextField
+                        size='small'
+                        name='complex.email_address'
+                        value={formik.values.complex.email_address}
                         onChange={formik.handleChange}
-                        error={getIn(formik.touched, 'complex.phone_number_landcode') && Boolean(getIn(formik.errors, 'complex.phone_number_landcode'))}
-                    >
-                        <MenuItem value=''>Choose a phone number landcode</MenuItem>
-                        {phoneNumberLandcode.map((item, index) => (
-                            <MenuItem key={index} value={item.value}>{item.label}</MenuItem>
-                        ))}
-                    </Select>
-                    {getIn(formik.touched, 'complex.phone_number_landcode') && (
-                        <div>
-                            {getIn(formik.errors, 'complex.phone_number_landcode')}
-                        </div>
-                    )}
+                        error={getIn(formik.touched, 'complex.email_address') && Boolean(getIn(formik.errors, 'complex.email_address'))}
+                        helperText={getIn(formik.touched, 'complex.email_address') && getIn(formik.errors, 'complex.email_address')}
+                    />
                 </FormControl>
 
-                <FormGroup>
+
+                <FormControl >
+                    {/* OPENING HOURS */}
+                    <FormLabel id='complex_opening_hours' component='legend' style={{ color: 'black', marginBottom: '10px'}}>Openings hours</FormLabel>
+                    <TextField
+                        size='small'
+                        id='complex_opening_hours'
+                        name='complex.opening_hours'
+                        value={formik.values.opening_hours}
+                        onChange={formik.handleChange}
+                        error={getIn(formik.touched, 'complex.opening_hours') && Boolean(getIn(formik.errors, 'complex.opening_hours'))}
+                        helperText={getIn(formik.touched, 'complex.opening_hours') && getIn(formik.errors, 'complex.opening_hours')}
+                    />
+                </FormControl>
+
+                <FormGroup className="formgroup-fullwidth">
                     <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Facility types</FormLabel>
-                    <FormGroup>
+                    <FormGroup className="formgroup-1fr-1fr-1fr">
                         {complexFacilities.map((item, index) => (
                             <FormControlLabel key={index}
                                 control={
@@ -202,17 +252,24 @@ const ComplexInformations = () => {
                     </FormGroup>
                 </FormGroup>
 
-                {/* PREVIEW */}
-                <Button variant='contained' type='submit' onClick={previewStep}>
-                    Previous
-                </Button>
+                  <div className='button_wrapper'>
+                    {/* PREVIEW */}
+                    <Button variant='contained' type='submit' onClick={previewStep}>
+                        Previous
+                    </Button>
 
-                {/* NEXT */}
-                <Button color='primary' variant='contained' type='submit'>
-                    Next
-                </Button>
+                    {/* NEXT */}
+                    <Button color='primary' variant='contained' type='submit'>
+                        Next
+                    </Button>
+                </div>
+
+
+              
+
+                
             </form>
-        </>
+        </div>
     )
 }
 

@@ -5,13 +5,17 @@ import * as Yup from 'yup'
 
 import { useNavigate } from 'react-router-dom'
 
-import { Button, FormLabel, TextField } from '@mui/material'
+import { Button, FormLabel, TextField, FormControl } from '@mui/material'
 import { Add, DeleteForever } from '@mui/icons-material/'
+import { makeStyles } from '@mui/styles';
 
 import { useData } from '../../Context/LivingPlaceRegistrationContext'
 
 import { LivingPlaceRegistrationTimeline } from '../../Components/Registration/index'
 import LivingPlaceRegistrationTimelineState from '../../Context/LivingPlaceRegistrationTimelineState'
+
+import '../../Styles/Pages/LivingPlaceRegistration.scss'
+import { positions } from '@mui/system'
 
 const validationSchema = Yup.object().shape({
     floorplan: Yup.array().of(
@@ -41,6 +45,17 @@ const initialValues = {
   ]
 }
 
+const useStyles = makeStyles({
+  roundButton: {
+    width: '35px!important',
+    height: '35px',
+    borderRadius: '50%',
+    minWidth: 'unset!important',
+    boxShadow: 'unset!important',
+    
+  },
+});
+
 const FloorplanInformations = () => {
 
     LivingPlaceRegistrationTimelineState.maxStep = 4
@@ -56,8 +71,10 @@ const FloorplanInformations = () => {
         console.log(data)
     }
 
+    const classes = useStyles();
+
     return (
-        <>
+        <div className='container_form'>
             <LivingPlaceRegistrationTimeline />
 
             <h5>Floorplan informations</h5>
@@ -95,49 +112,67 @@ const FloorplanInformations = () => {
                             {({ remove, push }) => (
                                 <div>
                                     {values.floorplan.length > 0 && values.floorplan.map((room, index) => (
-                                        <div className='row' key={index}>
+                                        <div className='form_living_place_register remove_two_rows' key={index} >
 
-                                            {/* FLOOR */}
-                                            <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Floor</FormLabel>
-                                            <TextField
-                                                name={`floorplan.${index}.floor`}
-                                                value={room.floor}
-                                                onChange={handleChange}
-                                            />
-                                            <ErrorMessage name={`floorplan.${index}.floor`} />
+                                            <FormControl >
+                                                {/* FLOOR */}
+                                                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Floor</FormLabel>
+                                                <TextField
+                                                    size='small'
+                                                    name={`floorplan.${index}.floor`}
+                                                    value={room.floor}
+                                                    onChange={handleChange}
+                                                />
+                                                <ErrorMessage name={`floorplan.${index}.floor`} />
+                                            </FormControl>
 
-                                            {/* AREA */}
-                                            <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Area</FormLabel>
-                                            <TextField
-                                                name={`floorplan.${index}.area`}
-                                                value={room.area}
-                                                onChange={handleChange}
-                                            />
-                                            <ErrorMessage name={`floorplan.${index}.area`} />
+                              
 
-                                            <div className='col'>
-                                                <Button variant='contained' onClick={() => remove(index)}><DeleteForever /></Button>
-                                            </div>
+                                            <FormControl >
+                                                {/* AREA */}
+                                                <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Area</FormLabel>
+                                                <TextField
+                                                    size='small'
+                                                    name={`floorplan.${index}.area`}
+                                                    value={room.area}
+                                                    onChange={handleChange}
+                                                />
+                                                <ErrorMessage name={`floorplan.${index}.area`} />
+                                            </FormControl>
+                                            
+                                            <Button className={classes.roundButton} variant='contained' onClick={() => remove(index)} style={{marginTop: '35px'}}> <DeleteForever /></Button>
+                                           
+
                                         </div>
                                     ))}
-                                    <Button variant='contained' onClick={() => push({ floor: '', area: '' })}><Add /></Button>
+
+                                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', marginTop: '15px', width:'fit-content'}}>
+                                         Add room
+                                        <Button className={classes.roundButton} variant='contained' onClick={() => push({ floor: '', area: '' })}><Add /></Button>
+                                    </div>
+
+
+
+                                    
                                 </div>
                             )}
                         </FieldArray>
 
-                        {/* PREVIEW */}
-                        <Button variant='contained' onClick={previewStep}>
-                            Previous
-                        </Button>
+                        <div className='button_wrapper'>
+                            {/* PREVIEW */}
+                            <Button variant='contained' type='submit' onClick={previewStep}>
+                                Previous
+                            </Button>
 
-                        {/* NEXT */}
-                        <Button variant='contained' type='submit'>
-                            Next
-                        </Button>
+                            {/* NEXT */}
+                            <Button color='primary' variant='contained' type='submit'>
+                                Next
+                            </Button>
+                        </div>
                     </Form>
                 )}
             </Formik>
-        </>
+        </div>
     )
 }
 

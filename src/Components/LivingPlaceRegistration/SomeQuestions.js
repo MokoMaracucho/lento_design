@@ -11,6 +11,8 @@ import complexNames from '../../Json/ComplexNames'
 import residenceTypes from '../../Json/ResidenceTypes'
 import livingPlaceTypes from '../../Json/LivingPlaceTypes'
 
+import '../../Styles/Components/LivingPlaceRegistration.scss';
+
 const validationSchema = Yup.object({
     introduction: Yup.object({
         part_of_complex: Yup.boolean(),

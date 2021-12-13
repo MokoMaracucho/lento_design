@@ -16,6 +16,8 @@ import LivingPlaceRegistrationTimelineState from '../../Context/LivingPlaceRegis
 import roomTypes from '../../Json/RoomTypes'
 import roomFacilities from '../../Json/RoomFacilities'
 
+import '../../Styles/Pages/LivingPlaceRegistration.scss'
+
 let initialValues = {
     rooms: ''
 }
@@ -134,7 +136,7 @@ const RoomsInformations = () => {
     if(!roomsArrayCreated) return null
 
     return (
-        <>
+        <div className='container_form'>
             <LivingPlaceRegistrationTimeline />
 
             <h5>Rooms informations</h5>
@@ -157,6 +159,9 @@ const RoomsInformations = () => {
             </div>
 
             <Formik
+            
+                    
+
                 initialValues={initialValues}
                 /* validationSchema={validationSchema} */
                 onSubmit={(data) => {
@@ -183,98 +188,105 @@ const RoomsInformations = () => {
                                         </Box>
                                         {data.residence.number_rooms_with_vhes > 0 && values.rooms.map((room, roomIndex) => (
                                             <TabPanel value={value} index={roomIndex}>
-            
-                                                {/* LIVING PLACE TYPE */}
-                                                <div>
-                                                    <FormControl>
-                                                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Living place type {roomIndex}</FormLabel>
-                                                        <Select
-                                                            name={`rooms.${roomIndex}.room_type`}
-                                                            value={room.room_type}
+
+                                                <div className='form_living_place_register two_rows'>
+        
+                                                    {/* LIVING PLACE TYPE */}
+                                                    <div>
+                                                        <FormControl size='small'>
+                                                            <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Living place type {roomIndex}</FormLabel>
+                                                            <Select
+                                                                name={`rooms.${roomIndex}.room_type`}
+                                                                value={room.room_type}
+                                                                onChange={handleChange}
+                                                            >
+                                                                <MenuItem value=''>Choose a room type</MenuItem>
+                                                                {roomTypes.map((item, index) => (
+                                                                    <MenuItem key={index} value={item.value}>{item.label}</MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                        <ErrorMessage name={`rooms.${roomIndex}.room_type`} />
+                                                    </div>
+
+                                                    {/* ROOM NUMBER */}
+                                                    <div>
+                                                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Room number</FormLabel>
+                                                        <TextField
+                                                            size='small'
+                                                            name={`rooms.${roomIndex}.room_number`}
+                                                            value={room.room_number}
                                                             onChange={handleChange}
-                                                        >
-                                                            <MenuItem value=''>Choose a room type</MenuItem>
-                                                            {roomTypes.map((item, index) => (
-                                                                <MenuItem key={index} value={item.value}>{item.label}</MenuItem>
-                                                            ))}
-                                                        </Select>
-                                                    </FormControl>
-                                                    <ErrorMessage name={`rooms.${roomIndex}.room_type`} />
-                                                </div>
+                                                        />
+                                                        <ErrorMessage name={`rooms.${roomIndex}.room_number`} />
+                                                    </div>
 
-                                                {/* ROOM NUMBER */}
-                                                <div>
-                                                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Room number</FormLabel>
-                                                    <TextField
-                                                        name={`rooms.${roomIndex}.room_number`}
-                                                        value={room.room_number}
-                                                        onChange={handleChange}
-                                                    />
-                                                    <ErrorMessage name={`rooms.${roomIndex}.room_number`} />
-                                                </div>
-
-                                                {/* FLOOR */}
-                                                <div>
-                                                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Floor</FormLabel>
-                                                    <TextField
-                                                        name={`rooms.${roomIndex}.floor`}
-                                                        value={room.floor}
-                                                        onChange={handleChange}
-                                                    />
-                                                    <ErrorMessage name={`rooms.${roomIndex}.floor`} />
-                                                </div>
-
-                                                {/* DIMENSION M2 */}
-                                                <div>
-                                                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Dimension in m2</FormLabel>
-                                                    <TextField
-                                                        name={`rooms.${roomIndex}.dimension_m2`}
-                                                        value={room.dimension_m2}
-                                                        onChange={handleChange}
-                                                    />
-                                                    <ErrorMessage name={`rooms.${roomIndex}.dimension_m2`} />
-                                                </div>
-
-                                                {/* COLIVING ALLOWED */}
-                                                <div>
-                                                    <FormControl component='fieldset'>
-                                                        <FormLabel component='legend' style={{ color: 'black'}}>Coliving allowed</FormLabel>
-                                                        <RadioGroup
-                                                            name={`rooms.${roomIndex}.coliving_allowed`}
-                                                            value={room.coliving_allowed}
+                                                    {/* FLOOR */}
+                                                    <div>
+                                                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Floor</FormLabel>
+                                                        <TextField
+                                                            size='small'
+                                                            name={`rooms.${roomIndex}.floor`}
+                                                            value={room.floor}
                                                             onChange={handleChange}
-                                                        >
-                                                            <FormControlLabel
-                                                                value='true'
-                                                                control={<Radio />}
-                                                                label='True'
-                                                            />
-                                                            <FormControlLabel
-                                                                value='false'
-                                                                control={<Radio />}
-                                                                label='False'
-                                                            />
-                                                        </RadioGroup>
-                                                    </FormControl>
-                                                    <ErrorMessage name={`rooms.${roomIndex}.coliving_allowed`} />
-                                                </div>
+                                                        />
+                                                        <ErrorMessage name={`rooms.${roomIndex}.floor`} />
+                                                    </div>
 
-                                                {/* NUMBER OF LIVING PLACES */}
-                                                <div>
-                                                    <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Number of living places</FormLabel>
-                                                    <TextField
-                                                        name={`rooms.${roomIndex}.number_of_living_places`}
-                                                        value={room.number_of_living_places}
-                                                        onChange={handleChange}
-                                                    />
-                                                    <ErrorMessage name={`rooms.${roomIndex}.number_of_living_places`} />
-                                                </div>
+                                                    {/* DIMENSION M2 */}
+                                                    <div>
+                                                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Dimension in m2</FormLabel>
+                                                        <TextField
+                                                            size='small'
+                                                            name={`rooms.${roomIndex}.dimension_m2`}
+                                                            value={room.dimension_m2}
+                                                            onChange={handleChange}
+                                                        />
+                                                        <ErrorMessage name={`rooms.${roomIndex}.dimension_m2`} />
+                                                    </div>
 
-                                                {/* FACILITY TYPES */}
-                                                <div>
-                                                    <FormGroup>
+                                                        {/* NUMBER OF LIVING PLACES */}
+                                                    <div>
+                                                        <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Number of living places</FormLabel>
+                                                        <TextField
+                                                            size='small'
+                                                            name={`rooms.${roomIndex}.number_of_living_places`}
+                                                            value={room.number_of_living_places}
+                                                            onChange={handleChange}
+                                                        />
+                                                        <ErrorMessage name={`rooms.${roomIndex}.number_of_living_places`} />
+                                                    </div>
+
+                                                    {/* COLIVING ALLOWED */}
+                                                    <div>
+                                                        <FormControl component='fieldset'>
+                                                            <FormLabel component='legend' style={{ color: 'black'}}>Coliving allowed</FormLabel>
+                                                            <RadioGroup
+                                                                row
+                                                                name={`rooms.${roomIndex}.coliving_allowed`}
+                                                                value={room.coliving_allowed}
+                                                                onChange={handleChange}
+                                                            >
+                                                                <FormControlLabel
+                                                                    value='true'
+                                                                    control={<Radio />}
+                                                                    label='True'
+                                                                />
+                                                                <FormControlLabel
+                                                                    value='false'
+                                                                    control={<Radio />}
+                                                                    label='False'
+                                                                />
+                                                            </RadioGroup>
+                                                        </FormControl>
+                                                        <ErrorMessage name={`rooms.${roomIndex}.coliving_allowed`} />
+                                                    </div>
+
+                                                    {/* FACILITY TYPES */}
+                                            
+                                                    <FormGroup className="formgroup-fullwidth">
                                                         <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Facility types</FormLabel>
-                                                        <FormGroup>
+                                                        <FormGroup className="formgroup-1fr-1fr-1fr">
                                                             {roomFacilities.map((item, index) => (
                                                                 <FormControlLabel key={index}
                                                                 control={
@@ -289,6 +301,7 @@ const RoomsInformations = () => {
                                                             ))}
                                                         </FormGroup>
                                                     </FormGroup>
+                                                    
                                                 </div>
                                             </TabPanel>
                                         ))}
@@ -297,19 +310,21 @@ const RoomsInformations = () => {
                             )}
                         </FieldArray>
 
-                        {/* PREVIEW */}
-                        <Button type='submit' variant='contained' onClick={previewStep}>
-                            Previous
-                        </Button>
+                        <div className='button_wrapper'>
+                    {/* PREVIEW */}
+                    <Button variant='contained' type='submit' onClick={previewStep}>
+                        Previous
+                    </Button>
 
-                        {/* NEXT */}
-                        <Button type='submit' color='primary' variant='contained'>
-                            Next
-                        </Button>
+                    {/* NEXT */}
+                    <Button color='primary' variant='contained' type='submit'>
+                        Next
+                    </Button>
+                </div>
                     </Form>
                 )}
             </Formik>
-        </>
+        </div>
     )
 }
 

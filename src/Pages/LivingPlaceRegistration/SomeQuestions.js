@@ -73,17 +73,21 @@ const SomeQuestions = () => {
     if(!complexNames) return null */
 
     return (
-        <>
-            <form onSubmit={formik.handleSubmit} className='form_living_place_register'>
-                
-                <LivingPlaceRegistrationTimeline />
+        <div className='container_form'>
+            
+            <LivingPlaceRegistrationTimeline />
+            
+            <h5>Questions about the residence</h5>
 
-                <h5>Questions about the residence</h5>
+            <form onSubmit={formik.handleSubmit} className='form_living_place_register one_row'>
+                
+         
 
                 {/* PART OF A COMPLEX */}
                 <FormControl component='fieldset'>
                     <FormLabel component='legend' style={{ color: 'black'}}>Is the residence part of a complex?</FormLabel>
                     <RadioGroup
+                        row
                         name='introduction.part_of_complex'
                         value={formik.values.introduction.part_of_complex}
                         onChange={formik.handleChange}
@@ -106,6 +110,7 @@ const SomeQuestions = () => {
                     <FormControl component='fieldset'>
                         <FormLabel component='legend' style={{ color: 'black'}}>Does it already exist in the platform?</FormLabel>
                         <RadioGroup
+                            row
                             name='introduction.is_existing_complex'
                             value={formik.values.introduction.is_existing_complex}
                             onChange={formik.handleChange}
@@ -132,7 +137,7 @@ const SomeQuestions = () => {
             
                 {/* EXISTING COMPLEX NAME */}
                 {formik.values.introduction.part_of_complex === 'true' && formik.values.introduction.is_existing_complex === 'true' && (
-                    <FormControl>
+                    <FormControl size='small'>
                         <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Choose a complex</FormLabel>
                         <Select
                             name='introduction.existing_complex_name'
@@ -154,7 +159,7 @@ const SomeQuestions = () => {
                 )}
             
                 {/* RESIDENCE TYPE */}
-                <FormControl>
+                <FormControl size='small'>
                     <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Residence type</FormLabel>
                     <Select
                         name='introduction.residence_type'
@@ -172,10 +177,10 @@ const SomeQuestions = () => {
                             {getIn(formik.errors, 'introduction.residence_type')}
                         </div>
                     )}
-                </FormControl>
+                </FormControl >
             
                 {/* LIVING PLACE TYPE */}
-                <FormControl>
+                <FormControl size='small'>
                     <FormLabel component='legend' style={{ color: 'black', marginBottom: '10px'}}>Living place type</FormLabel>
                     <Select
                         name='introduction.vhe_type'
@@ -195,12 +200,17 @@ const SomeQuestions = () => {
                     )}
                 </FormControl>
 
-                {/* NEXT */}
-                <Button color='primary' variant='contained' type='submit'>
-                    Next
-                </Button>
+            
+                <div className='button_wrapper right'>
+                    {/* NEXT */}
+                    <Button color='primary' variant='contained' type='submit'>
+                        Next
+                    </Button>
+                </div>
+                
+            
             </form>
-        </>
+        </div>
     )
 }
 
