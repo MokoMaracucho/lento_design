@@ -1,0 +1,144 @@
+@font-face {
+    font-family: DMSansMedium;
+    src: url("./Assets/Fonts/DM_Sans/DMSans-Medium.ttf");
+}
+
+h1 {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 100px;
+    line-height: 100%;
+}
+
+h2 {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 84px;
+    line-height: 110%;
+}
+
+h3 {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 64px;
+    line-height: 100%;
+}
+
+h4 {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 48px;
+    line-height: 110%;
+}
+
+h5 {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 32px;
+    line-height: 110%;
+}
+
+p {
+    font-family: DMSansMedium;
+}
+
+span {
+    font-family: DMSansMedium;
+}
+
+.error_FORM {
+    font-size: 12px;
+}
+
+.p-large {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.p-medium {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+.p-small {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 10px;
+    line-height: 160%;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.languages {
+    font-family: DMSansMedium;
+    font-weight: medium;
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.white_COLOR {
+    color: white;
+}
+
+.black_COLOR {
+    color: black;
+}
+
+.grey_COLOR {
+    color: #777;
+}
+
+.blue_COLOR {
+    color: #5398D4;
+}
+
+.pink_COLOR {
+    color: #ECBAA3;
+}
+
+.red_COLOR {
+    color: #F36161;
+}
+
+.large_CancelIcon {
+    font-size: large;
+}
+
+.margin-top-large {
+    margin-top: 20px;
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+.ninetyDeg_ROTATE {
+    transform: rotate(90deg);
+}
+
+.select__input {
+    position: relative;
+    font-family: DMSansMedium;
+
+    select {
+        display: none;
+    }
+}
+
+/* FORMS */
+
+.timelineForm__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__container {
+    padding-top: 30px;
+}

@@ -1,0 +1,71 @@
+.form_living_place_register{
+  width: 90vw;
+  max-width: 600px;
+}
+
+.two_rows{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.MuiFormGroup-root {
+  display: flex;
+  justify-content: center;
+}
+.css-nnbavb{
+  display: none;
+}
+
+.MuiOutlinedInput-notchedOutline{
+  top: 0px!important;
+  border-radius: 5px!important;
+  border-color: transparent!important;
+}
+
+.MuiFormLabel{
+
+}
+
+.MuiPaper-root{
+  border-radius: 5px!important;
+}
+
+.MuiList-root{
+  background-color: #EEEEEE;
+  .Mui-disabled{
+    background-color: transparent!important;
+  }
+  
+}
+
+.MuiFormControl-root{
+  width: 100%;
+  max-width: 300px;
+  margin: 15px 0!important;
+
+}
+
+.MuiOutlinedInput-root{
+    background-color: #EEEEEE;
+
+}
+
+.MuiButton-root{
+  width: 100px!important;
+  height: 45px!important;
+  background-color: '#5398D4'!important;
+  font-family: 'DMSansMedium'!important;
+  border-radius: 22.5px!important;
+  text-transform: none!important;
+}
+
+.MuiRadio-root{
+  color:#EEEEEE!important;
+
+}
+  .Mui-checked{
+    span:nth-child(2) svg:nth-child(2) {
+      color: #5398D4!important;
+    }
+  }

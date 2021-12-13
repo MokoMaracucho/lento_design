@@ -1,0 +1,31 @@
+#rentOut_DIV {
+    /* z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    top: 40%;
+    right: 25%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 590px;
+    height: 590px;
+    margin-left: 40px;
+    top: 350px;
+    background-image: url('../../../../../Assets/Images/exploreSection_rentOut.jpg');
+    padding: 30px;
+
+    .p-large-white {
+        font-family: DMSansMedium;
+        color: white;
+        font-size: 64px;
+    }
+
+    #rentOut_FOOTER {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+    }
+}

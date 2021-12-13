@@ -1,0 +1,74 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h5 {
+        margin-top: 40px;
+    }
+
+    #partOfAComplex__div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    #existingComplex__div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #existingComplexName__div {
+        margin-top: 20px;
+
+        #existingComplexNameError__container {
+            height: 20px;
+        
+            #existingComplexNameError__div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+
+    #residenceType__div {
+        margin-top: 10px;
+
+        #residenceTypeError__container {
+            height: 20px;
+
+            #residenceTypeError__div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+
+    #vheType__div {
+        margin-top: 10px;
+
+        #vheTypeError__container {
+            height: 20px;
+
+            #vheTypeError__div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+
+    #someQuestionsNext__div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 500px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+}

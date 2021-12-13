@@ -1,0 +1,112 @@
+#livingPlaceInformations_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #livingPlacesInformationsPanels__div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        #livingPlacesInformationsTopPanel__div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            #maximumStayDuration__div {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+            }
+
+            #rentalPriceTerm__div {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+            }
+        }
+
+        #description__div {
+            margin: 10px;
+        }
+
+        #livingPlacesInformationsBottomPanel__div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 10px;
+
+            #livingPlacesInformationsLeftPanel__div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #livingPlacesInformationsRightPanel__div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                #livingPlacesInformationsRightLeftPanel__div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-left: 20px;
+
+                    #b2cDeposit__div {
+                        margin-top: 10px;
+                    }
+
+                    #serviceCost__div {
+                        margin-top: 10px;
+                    }
+                }
+
+                #livingPlacesInformationsRightRightPanel__div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-left: 20px;
+
+                    #b2bRentalPrice__div {
+                        margin-left: -10px;
+                    }
+
+                    #b2cRentalPrice__div {
+                        margin-left: -10px;
+                        margin-top: 10px;
+                    }
+
+                    #serviceCostTerm__div {
+                        margin-left: -10px;
+                        margin-top: 10px;
+                    }
+                } 
+            }
+        }
+    }
+
+    #livingPlacesFacilities__div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 100px;
+
+        #livingPlacesFacilitiesTypes__div {
+
+            .MuiFormGroup-root {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                /* justify-content: space-between; */
+                width: 580px;
+                margin-left: 50px;
+
+                .MuiFormControlLabel-root {
+                    width: 180px;
+                }
+            }
+        }
+    }
+}

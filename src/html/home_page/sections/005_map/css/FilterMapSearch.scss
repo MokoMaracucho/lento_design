@@ -1,0 +1,24 @@
+#searchForm_DIV {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: [col-left] 1fr [col1] 1fr [col-2] 1fr [col-3] 1fr [col-right]; */
+    grid-template-rows: [row-top] 1fr [row1] 1fr [row-bottom];
+    grid-template-areas:
+        "location_DIV propertyType_DIV range_DIV searchButton_DIV"
+        "location_DIV propertyType_DIV range_DIV searchButton_DIV";
+    
+    .input {
+        color: #8c8c8c;
+    }
+
+    .border-left {
+        border-right-style: solid;
+        border-width: 1px;
+    }
+
+    .padding {
+        padding-left: 50px;
+        padding-top: 20px;
+    }
+}

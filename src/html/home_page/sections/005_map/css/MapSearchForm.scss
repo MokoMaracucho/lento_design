@@ -1,0 +1,51 @@
+#map_FORM {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px;
+
+    #numberResult_location_search_DIV {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+
+        #numberResult_location_DIV {
+            margin-right: 100px;
+        }
+    }
+
+    #map_form_DIV {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: space-between;
+
+        .border-left {
+            border-right-style: solid;
+            border-width: 1px;
+        }
+    
+        .padding-left {
+            padding-left: 20px;
+            /* padding-top: 20px; */
+        }
+    
+        input {
+            padding: 0;
+            background: none;
+            border: none;
+            border-radius: 0;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        #datePickers_map_DIV {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

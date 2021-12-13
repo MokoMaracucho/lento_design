@@ -1,0 +1,246 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h5 {
+        margin-top: 40px;
+    }
+
+    #complexInformationsPanels__div {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        #complexInformationsLeftPanel__div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+
+            #complexNameError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #complexName__div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                #complexNameError__div {
+                    height: 20px;
+                }
+            }
+
+            #houseNumberError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #houseNumber__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #houseNumberError__div {
+                    height: 20px;
+                }
+            }
+
+            #cityPostalCode__div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                #cityError__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    #city__div {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 10px;
+                    }
+
+                    #cityError_div {
+                        height: 20px;
+                    }
+                }
+
+                #postalCodeError__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    #postalCode__div {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 10px;
+                    }
+
+                    #postalCodeError__div {
+                        height: 20px;
+                    }
+                }
+            }
+
+            #phoneNumberError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #phoneNumber__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #phoneNumberError__div {
+                    height: 20px;
+                }
+            }
+
+            #emailError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #email__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #emailError__div {
+                    height: 20px;
+                }
+            }
+        }
+
+        #complexInformationsRightPanel__div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 20px;
+
+            #streetError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #street__div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                #streetError__div {
+                    height: 20px;
+                }
+            }
+
+            #houseNumberExtensionError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #houseNumberExtension__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #houseNumberExtensionError__div {
+                    height: 20px;
+                }
+            }
+
+            #countryError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #country__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #countryError__div {
+                    height: 20px;
+                }
+            }
+
+            #phoneNumberLandcodeError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #phoneNumberLandcode__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #phoneNumberLandcodeError__div {
+                    height: 20px;
+                }
+            }
+
+            #openingHoursError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #openingHours__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #openingHoursError__div {
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    #complexFacilities__div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        #complexFacilitiesTypes__div {
+
+            .MuiFormGroup-root {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                /* justify-content: space-between; */
+                width: 580px;
+                margin-left: 50px;
+
+                .MuiFormControlLabel-root {
+                    width: 180px;
+                }
+            }
+        }
+    }
+
+    #complexInformationsButtons__div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 500px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+
+        #complexInformationsNextButton__div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

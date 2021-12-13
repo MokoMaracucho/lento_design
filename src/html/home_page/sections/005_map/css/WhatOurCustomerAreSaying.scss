@@ -1,0 +1,26 @@
+#quote-panel {
+    margin: 60px;
+
+    #coma_SVG {
+        width: 50px;
+        height: 50px;
+    }
+
+    #client-quote {
+        width: 600px;
+    }
+
+    .client-quote-card {
+        display: flex;
+        flex-direction: row;
+
+        .client-infos {
+            margin: 15px;
+        }
+
+        #nameSurname {
+            font-weight: bold;
+            margin-bottom: -2px;
+        }
+    }
+}

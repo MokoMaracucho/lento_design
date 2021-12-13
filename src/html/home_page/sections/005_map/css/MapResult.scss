@@ -1,0 +1,14 @@
+
+
+    .client-quote-card {
+        display: flex;
+        flex-direction: row;
+
+        .client-infos {
+            margin: 15px;
+        }
+
+        #nameSurname {
+            font-weight: bold;
+        }
+    }

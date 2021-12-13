@@ -1,0 +1,252 @@
+/* @media screen and (max-height: 800px) {
+
+    #vheDetails_SECTION {
+        padding-top: 100px;
+        height: 150vh;
+        min-height: 150vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        #left_vheDetails_DIV {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            #map_DIV {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #right_vheDetails_DIV {
+            z-index: 7;
+            width: 50%;
+            box-shadow: -10px 0px 5px #aaaaaa50;
+        }
+    }
+}
+
+@media screen and (max-height: 1600px) {
+
+    #vheDetails_SECTION {
+        padding-top: 100px;
+        height: 150vh;
+        min-height: 150vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        #left_vheDetails_DIV {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            #map_DIV {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #right_vheDetails_DIV {
+            z-index: 7;
+            width: 50%;
+            box-shadow: -10px 0px 5px #aaaaaa50;
+        }
+    }
+} */
+
+@media screen and (max-height: 1600px) {
+
+    #vheDetails_SECTION {
+        padding-top: 100px;
+        height: 200vh;
+        min-height: 200vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-height: 800px) {
+
+    #vheDetails_SECTION {
+        padding-top: 100px;
+        height: 380vh;
+        min-height: 380vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        #location_SearchResult_DIV {
+            margin: 20px;
+            margin-left: 110px;
+            margin-top: 30px;
+        }
+
+        #images_vheDetails_DIV {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            #mainImage_vheDetails_IMG {
+                margin: 10px;
+                width: 890px;
+                height: 380px;
+            }
+
+            #smallImages_vheDetails_DIV {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: stretch;
+                margin-top: 50px;
+                max-width: 420px;
+                margin-top: -6px;
+
+                .smallImage_vheDetails_IMG {
+                    margin: 5px;
+                    width: 200px;
+                    height: 184px;
+                }
+            }
+        }
+
+        #infosVhe_vheDetails_DIV {
+            margin-left: 130px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-bottom: 1px solid grey;
+            padding-bottom: 20px;
+            width: 70%;
+
+            .infosVhes_vheDetails_DIVS {
+                margin-right: 30px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .iconsInfo_vheDetails_DIV {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        #description_vheDetails_DIV {
+            margin-left: 130px;
+            margin-top: 20px;
+            width: 70%;
+            border-bottom: 1px solid grey;
+
+            #descriptionTitle_vheDetails_P {
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            #descriptionText_vheDetails_P {
+                margin-bottom: 20px;
+            }
+        }
+
+        #included_notIncluded_vheDetails_DIV {
+            margin-left: 130px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-right: 20px;
+            border-bottom: 1px solid grey;
+            width: 70%;
+            padding-bottom: 20px;
+
+            #included_vheDetails_DIV {
+                display: flex;
+                flex-direction: row;
+
+                .labels_included_DIVS {
+                    width: 245px;
+                    height: 35px;
+                    background-color: #EEEEEE;
+                    margin: 5px;
+                    border-radius: 5px;
+                }
+
+                .checkboxes_included_DIVS {
+                    width: 35px;
+                    height: 35px;
+                    background-color: #5398D4;
+                    margin: 5px;
+                    border-radius: 50%;
+                }
+            }
+
+            #notIncluded_vheDetails_DIV {
+                display: flex;
+                flex-direction: row;
+
+                .labels_notIncluded_DIVS {
+                    width: 245px;
+                    height: 35px;
+                    background-color: #EEEEEE;
+                    margin: 5px;
+                    border-radius: 5px;
+                }
+
+                .checkboxes_notIncluded_DIVS {
+                    width: 35px;
+                    height: 35px;
+                    background-color: #ECBAA3;
+                    margin: 5px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        #review_vheDetails_DIV {
+            margin-left: 130px;
+            margin-top: 20px;
+            width: 70%;
+            border-bottom: 1px solid grey;
+            padding-bottom: 20px;
+
+            #rateStar_vheDetails_DIV {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                #rate_vheDetails_DIV {
+                    margin-left: 20px;
+                }
+            }
+
+            #comments_vheDetails_DIV {
+                display: flex;
+                flex-direction: row;
+                padding: 10px;
+
+                .commentTitle_vheDetails_PS {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        #mapDiv_vheDetails_DIV {
+            margin-left: 130px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+
+            #mapHeader_vheDetails_DIV {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-betwwen;
+
+                #map_vheDetails_DIV {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+

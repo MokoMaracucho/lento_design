@@ -1,0 +1,58 @@
+#roomInformations_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #roomInformationsPanels__div {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        #roomInformationsLeftPanel__div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+
+            #roomType__div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #floor__div {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+        }
+
+        #roomInformationsRightPanel__div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+
+            #houseNumberExtensionOfTheRoom__div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #dimensionInSquareMeters__div {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    #roomFacilities__div {
+        display: flex;
+        flex-direction: column;
+
+        #roomsFacilitiesTypes__div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

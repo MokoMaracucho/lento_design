@@ -1,0 +1,16 @@
+#wrap_list_CONTAINER {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-left: 5%;
+    margin-top: 50px;
+    width: 600px;
+}
+
+#row_list_CONTAINER {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-top: 50px;
+    width: 600px;
+}

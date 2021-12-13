@@ -1,0 +1,60 @@
+#search_home_FORM {
+    z-index: 6;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+
+    .border-left {
+        border-right-style: solid;
+        border-width: 1px;
+    }
+
+    .padding-left {
+        padding-left: 30px;
+        /* padding-top: 20px; */
+    }
+
+    #filters_DIV {
+        display: flex;
+        flex-direction: row;
+        align-items: space-between;
+        margin-right: 430px;
+
+        .filterType_DIVS {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+
+            input {
+                padding: 0;
+                background: none;
+                border: none;
+                border-radius: 0;
+                outline: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+            #range_INPUTS {
+                display: flex;
+                flex-direction: row;
+
+                input {
+                    width: 50px;
+                }
+
+                #range_SPAN {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        #datePickers_home_DIV {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

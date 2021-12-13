@@ -1,0 +1,223 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h5 {
+        margin-top: 40px;
+    }
+
+    #residenceInformationsPanels__div {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        #residenceInformationsLeftPanel__div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
+
+            #residenceHouseNumberError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #residenceHouseNumber__div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                #residenceHouseNumberError__div {
+                    height: 20px;
+                }
+            }
+            
+            #residenceHouseNumberExtensionError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #residenceHouseNumberExtension__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #residenceHouseNumberExtensionError__div {
+                    height: 20px;
+                }
+            }
+            
+            #residenceFloorError__container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                #residenceFloor__div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                }
+
+                #residenceFloorError__div {
+                    height: 20px;
+                }
+            }
+        }
+
+        #residenceInformationsRightPanel__div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #rentalPermitAlwaysVisibleInPlatform__div {
+                display: flex;
+                flex-direction: row;
+                margin-left: 30px;
+
+                #rentalPermitError__container {
+                    display: flex;
+                    flex-direction: column;
+
+                    #rentalPermit__div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    #rentalPermitError__div {
+                        height: 20px;
+                        margin-top: -10px;
+                    }
+                }
+
+                #alwaysVisibleInPlatformError__container {
+                    display: flex;
+                    flex-direction: column;
+
+                    #alwaysVisibleInPlatform__div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    #alwaysVisibleInPlatformError__div {
+                        height: 20px;
+                        margin-top: -10px;
+                    }
+                }
+            }
+
+            #snfCertificateAkfCertificate__div {
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                margin-left: 30px;
+
+                #snfCertificateError__container {
+                    display: flex;
+                    flex-direction: column;
+
+                    #snfCertificate__div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    #snfCertificateError__div {
+                        height: 20px;
+                        margin-top: -10px;
+                    }
+                }
+
+                #akfCertificateError__container {
+                    display: flex;
+                    flex-direction: column;
+
+                    #akfCertificate__div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    #akfCertificateError__div {
+                        height: 20px;
+                        margin-top: -10px;
+                    }
+                }
+            }
+
+            #numberOfRoomsNumberOfRoomsWithLivingPlace__div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 20px;
+                margin-left: 20px;
+
+                #numberOfRoomsError__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+    
+                    #numberOfRooms__div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+    
+                    #numberOfRoomsError__div {
+                        height: 20px;
+                    }
+                }
+
+                #numberOfRoomsWithLivingPlaceError__container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-left: 10px;
+
+                    #numberOfRoomsWithLivingPlace__div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    #numberOfRoomsWithLivingPlaceError__div {
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    #residenceFacilities__div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        #residenceFacilitiesTypes__div {
+
+            .MuiFormGroup-root {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 580px;
+                margin-left: 50px;
+
+                .MuiFormControlLabel-root {
+                    width: 180px;
+                }
+            }
+        }
+    }
+
+    #residenceInformationsButtons__div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 500px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+
+        #residenceInformationsNextButton__div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

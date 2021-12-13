@@ -1,0 +1,31 @@
+#rent_DIV {
+   /*  z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    top: 40%;
+    left: 25%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 590px;
+    height: 590px;
+    margin-right: 40px;
+    background-image: url('../../../../../Assets/Images/exploreSection_rent.jpg');
+    padding: 30px;
+
+    .p-large-white {
+        font-family: DMSansMedium;
+        color: white;
+        font-size: 64px;
+    }
+
+    #rent_FOOTER {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+    }
+}

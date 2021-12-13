@@ -1,0 +1,22 @@
+.validButton_CONTAINER {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .validButton_CLASSNAME {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #5398D4;
+        border: 1px solid #5398D4;
+        border-radius: 22px;
+        margin-top: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        right: 0px;
+        bottom: 0px;
+    }
+}

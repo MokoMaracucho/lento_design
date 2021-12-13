@@ -1,0 +1,25 @@
+#footerNav_DIV {
+    margin-top: 10px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: row;
+
+    #logo_pivracyPolicy_DIV {
+        margin-top: 30px;
+
+        p{
+            margin-top: 62px;
+            margin-left: 25px;
+        }
+    }
+
+    .nav-column {
+        margin: 20px;
+        margin-left: 80px;
+        margin-right: 80px;
+
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}

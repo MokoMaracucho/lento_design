@@ -1,0 +1,54 @@
+
+
+/* @media screen and (max-height: 1600px) { */
+
+    #section005_SECTION {
+        height: 85vh;
+        min-height: 105rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        #left_mapSection_DIV {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            #map_DIV {
+                width: 100%;
+                height: 63%;
+            }
+
+            #whatOurCustomerAreSaying_left_DIV {
+                width: 100%;
+                height: 37%;
+            }
+        }
+
+        #right_mapSection_DIV {
+            z-index: 7;
+            width: 50%;
+            box-shadow: -10px 0px 5px #aaaaaa50;
+
+            #map_result_DIV {
+                width: 100%;
+                height: 60%;
+            }
+
+            #whatOurCustomerAreSaying_right_DIV {
+                width: 100%;
+                height: 37%;
+            }
+        }
+
+        /* #left-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #map_result_DIV {
+            z-index: 3;
+            box-shadow: -10px 0px 5px #aaaaaa;
+        } */
+    }
+/* } */

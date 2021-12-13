@@ -1,0 +1,21 @@
+.vertical_socialNetworks_CLASSNAME {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin-right: 55px;
+
+    .socialNetwork_DIV {
+        margin-bottom: 30px;
+    }
+}
+
+.horizontal_socialNetworks_CLASSNAME {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+
+    .socialNetwork_DIV {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

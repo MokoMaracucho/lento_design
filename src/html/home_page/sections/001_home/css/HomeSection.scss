@@ -1,0 +1,76 @@
+#section001_CONTAINER {
+    height: 40vh;
+    min-height: 40rem;
+}
+
+#section001_SECTION {
+    width: 100%;
+    background: rgb(236,186,163);
+    background: linear-gradient(180deg, rgba(236,186,163,1) 0%, rgba(255,255,255,1) 100%, rgba(0,212,255,1) 100%);
+
+    #section001_CONTAINER {
+        width: 100%;
+        padding-left: 6%;
+        display: flex;
+        align-items: flex-end;
+
+        #easyLivingBlock_search_DIV {
+            z-index: 2;
+            width: 90%;
+        }
+
+        #arcSection001_DIV {
+            z-index: 1;
+            position: relative;
+            height: 100%;
+            width: 50%;
+
+            svg{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            img {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                border-radius: 50% 50% 0% 0%;
+    
+                object-fit: contain;
+            }
+        }
+
+        #socialNetworks_DIV {
+            z-index: 2;
+            position: absolute;
+            right: 0;
+            height: 250px;
+            padding-bottom: 50px;
+        }
+    }
+
+    /* @media screen and (max-height: 1600px) {
+
+        #section001_CONTAINER {
+            height: 40vh;
+            min-height: 40vh;
+        }
+    }
+
+    @media screen and (max-height: 840px) {
+
+        #section001_CONTAINER {
+            height: 80vh;
+            min-height: 80vh;
+        }
+    }
+
+    @media screen and (max-height: 720px) {
+
+        #section001_CONTAINER {
+            height: 90vh;
+            min-height: 90vh;
+        }
+    } */
+}
